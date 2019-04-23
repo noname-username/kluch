@@ -1,0 +1,1264 @@
+@import "../lib/bootstrap-4.0.0/scss/_functions.scss"
+@import "../lib/bootstrap-4.0.0/scss/_variables.scss"
+@import "../lib/bootstrap-4.0.0/scss/mixins/_breakpoints.scss"
+
+//переменные
+
+$green: #40a30c
+$black: #121214
+$reg: 'mullerregular'
+$med: 'mullermedium'
+$bold: 'mullerbold'
+$ebold: 'mullerextrabold'
+
+
+html,
+body
+  font-family: $reg
+  color: $black
+
+body
+  &.noScroll
+    overflow: hidden
+
+h1
+  font-size: 48px
+
+.text_green
+  color: $green
+
+.mobileShow
+  display: none
+
+.section
+  padding-top: 100px
+  background-position: center
+  background-repeat: no-repeat
+  overflow-x: hidden
+
+.mobileTitle
+  .title
+    display: none
+    &+p
+      display: none
+
+b
+  font-family: $ebold
+
+.text_white
+  color: #fff
+
+.p_big
+  font-size: 22px
+
+.miniTip
+  span
+    color: #979696
+    padding-left: 10px
+
+.button
+  display: flex
+  flex-direction: row
+  justify-content: center
+  background-color: $green
+  border-radius: 100px
+  box-shadow: 0px 0px 35px 0px rgba(64, 163, 12, 0.34)
+  cursor: pointer
+  width: fit-content
+  align-items: center
+  span
+    font-family: $reg
+    font-size: 20px
+    color: #fff
+    padding: 25px 90px
+  &.button_icon
+    span
+      padding: 25px 20px 25px 50px
+  &:hover
+    text-decoration: none
+
+  .button__iconWrap
+    background-color: #fff
+    height: 80px
+    width: 80px
+    border-radius: 50px
+    display: flex
+    img
+      margin: auto
+
+.currency
+  font-family: calibri
+
+.markedList
+  .markedList__title
+    font-family: $med
+    color: #121214
+    font-size: 20px
+    margin: 0
+    padding-bottom: 12px
+    padding-left: 1px
+
+  .markedList__list
+    padding: 0
+    margin: 0
+    list-style: none
+    li
+      font-size: 16px
+      color: #121214
+      background: url(../img/circles.png) no-repeat top left
+      padding-left: 30px
+      padding-bottom: 12px
+
+
+.shadowBlock
+  background-color: #fff
+  box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.1)
+  padding: 30px 20px
+  width: 100%
+
+
+//хедер
+header
+  padding: 30px 0
+  position: absolute
+  width: 100%
+  z-index: 1
+
+  .header__phone
+    font-family: $bold
+    color: #fff
+    font-size: 22px
+    text-decoration: none
+    margin-right: 45px
+    img
+      padding-right: 15px
+    &:hover
+      text-decoration: none
+  .header__phone_mob
+    display: none
+
+  .toggleMenu
+    position: relative
+    width: 47px
+    height: 32px
+    cursor: pointer
+    z-index: 1000
+    span
+      width: 100%
+      height: 6px
+      position: absolute
+      background-color: $green
+      border-radius: 3px
+      transition: all .5s ease
+    .toggleMenu__top
+      top: 0
+      transform-origin: 0 0
+    .toggleMenu__middle
+      top: 13px
+      left: 0
+      opacity: 1
+    .toggleMenu__bottom
+      bottom: 0
+      transform-origin: 0 100%
+    &.active
+      .toggleMenu__top
+        transform: rotate(36deg)
+      .toggleMenu__middle
+        left: 50%
+        opacity: 0
+      .toggleMenu__bottom
+        transform: rotate(-36deg)
+
+  .header__menu
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+    align-items: center
+    position: fixed
+    width: 100%
+    height: 100%
+    top: 0
+    left: 100%
+    z-index: 999
+    transition: all .5s ease
+    padding: 80px
+    background-color: #202022
+    .miniHeader
+      a
+        padding: 0 20px
+    .markedList__list
+      li
+        padding-bottom: 15px
+        a
+          color: #fff
+          font-size: 20px
+          font-weight: bold
+          position: relative
+          top: -3px
+          cursor: pointer
+          &:hover
+            color: #fff
+    .linkBlock
+      display: flex
+      flex-direction: column
+      justify-content: center
+      p
+        font-size: 16px
+        text-align: center
+        color: #fff
+        margin: 0
+      div
+        display: flex
+        padding-top: 10px
+        a
+          margin: 7px
+    .headerMenu__button
+      a
+        font-size: 20px
+    &.active
+      left: 0
+
+
+// стартовая секция
+#startSection
+  background-color: #202022
+  background-image: url("../img/start_bg.png")
+  background-position: center
+  background-repeat: no-repeat
+  background-size: 100%
+  position: relative
+  padding-top: 112px
+
+  .startSection__button
+    padding-top: 45px
+
+  .downButton
+    position: relative
+    cursor: pointer
+    display: block
+    margin: auto
+    width: 29px
+    padding-top: 40px
+    padding-bottom: 70px
+
+
+//секция с инфографикой
+#infographicsSection
+  background-image: url("../img/info_bg1.jpg")
+  background-position: top center
+  background-size: cover
+
+  .infoBlock
+    display: flex
+    flex-direction: column
+    justify-content: flex-start
+    align-items: flex-start
+
+    .infoBlock__colWrap
+      height: 120px
+      width: 63px
+      display: flex
+      flex-direction: column
+      justify-content: flex-end
+
+      .infoBlock__col
+        background-color: $green
+        width: 100%
+        height: 3px
+        border-radius: 10px
+        transition: all .5s ease-in
+
+    .infoBlock__percentage
+      font-family: $ebold
+      color: $green
+      font-size: 30px
+      margin: 0
+      padding-top: 30px
+      padding-bottom: 10px
+
+    p
+      margin: 0
+
+  .infoReasonBlock
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    text-align: center
+    background-color: #fff
+    padding: 15px 25px
+    border-radius: 10px
+    border: 2px dashed #dbefd3
+    p
+      font-size: 15px
+      color: #6a6a6a
+      margin: 0
+      padding-top: 15px
+
+  &.active
+    .infoBlock__col
+      &[data-col-num="0"]
+        height: 120px
+      &[data-col-num="1"]
+        height: 91px
+      &[data-col-num="2"]
+        height: 45px
+      &[data-col-num="3"]
+        height: 46px
+      &[data-col-num="4"]
+        height: 11px
+    .mobileShow
+      .infoBlock__colWrap
+        height: 73px
+        .infoBlock__col
+          &[data-col-num="0"]
+            height: 73px
+          &[data-col-num="1"]
+            height: 55px
+          &[data-col-num="2"]
+            height: 30px
+          &[data-col-num="3"]
+            height: 30px
+          &[data-col-num="4"]
+            height: 7px
+
+
+// секция "вам не обойтись"
+#needsSection
+  background-image: url("../img/needs_bg.jpg")
+  background-repeat: no-repeat
+  background-position: right center
+  padding: 80px 0 90px 0
+
+  .title
+    padding-bottom: 80px
+
+  .simpleCard
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: flex-start
+    img
+      max-width: 144px
+      height: auto
+    p
+      margin: 0
+      padding-top: 20px
+
+
+//секция о финансовой модели
+#aboutModelSection
+  background-image: url("../img/about_bg.jpg")
+  background-size: cover
+  padding: 80px 0
+
+  .title
+    padding-bottom: 20px
+
+  .numList
+    padding: 0
+    margin: 0
+    list-style-type: none
+    li
+      padding-bottom: 10px
+      .numList__num
+        font-family: $ebold
+        color: $green
+        font-size: 25px
+      .numList__text
+        font-family: $med
+        padding-left: 15px
+        vertical-align: text-bottom
+
+  .aboutModelSection__button
+    padding: 20px 0 25px
+
+
+  .outImg
+    position: relative
+    left: 100px
+
+
+//секция скачать
+#downloadSection
+  background-image: url("../img/f3.jpg")
+  background-size: cover
+  padding: 90px 0 100px 0
+
+  .downloadSection__button
+    padding: 20px 0 25px
+
+
+//секция расчеты
+#calcSection
+  background-image: url("../img/f4.jpg")
+  background-size: cover
+  padding: 80px 0
+  position: relative
+  &:before
+    content: ''
+    display: block
+    position: absolute
+    width: 204px
+    height: 209px
+    background-image: url("../img/money.png")
+    top: 50px
+    left: 66%
+
+  .calcSection__list_inARow
+    padding-left: 40px
+
+  .calcSection__list_inACol
+    padding: 40px 20px 0 20px
+
+
+//планирование доходов
+#incomesPlanningSection
+  background-image: url("../img/f5.jpg")
+  background-size: cover
+  padding-top: 80px
+  .markedList
+    padding-top: 25px
+
+//планирование расходов
+#outcomesPlanningSection
+  background-color: #fff
+  padding: 80px 0
+  .markedList
+    padding-top: 25px
+
+//эффективность
+#effectSection
+  background: url("../img/f8.png") no-repeat top right
+  background-color: #fafbfb
+  padding: 80px 0
+  .markedList
+    padding-top: 25px
+  .effectSection__button
+    padding-top: 40px
+
+//уникальность
+#uniqueSection
+  background: url("../img/f9.png") no-repeat top right
+  padding: 80px 0
+  overflow: hidden
+  .title
+    max-width: 700px
+  .linkBlock
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    text-align: center
+    background-color: #fff
+    padding: 15px 20px
+    border-radius: 10px
+    border: 2px dashed #dbefd3
+    margin-top: 20px
+    p
+      font-size: 15px
+      color: #5b5b5b
+      margin: 0
+      text-align: left
+    a
+      align-self: flex-end
+      color: #979696
+      //text-decoration: underline dashed #979696
+      border-bottom: 2px dashed #9796965e
+  .outImgWrap
+    max-height: 500px
+    img
+      position: relative
+      top: -100px
+
+
+//секция со слайдером
+#sliderSection
+  background-color: #fafbfc
+  padding: 80px 0
+  .title
+    max-width: 660px
+  .casesSlider
+    box-shadow: 0 0 20px -5px rgba(0,0,0,0.1)
+    .casesSlider__arrow
+      background-color: $green
+      border-radius: 64px
+      box-shadow: 0 0 35px 0 rgba(64, 163, 12, 0.34)
+      width: 64px
+      height: 64px
+      position: absolute
+      top: calc(50% - 32px)
+      z-index: 1
+      cursor: pointer
+      &.casesSlider__arrow_prev
+        background-image: url("../img/prev_arr.png")
+        background-repeat: no-repeat
+        background-position: 22px center
+        left: -32px
+      &.casesSlider__arrow_next
+        background-image: url("../img/next_arr.png")
+        background-repeat: no-repeat
+        background-position: 29px center
+        right: -32px
+
+    .casesSlider__slide
+      display: flex
+      flex-direction: row
+      align-items: stretch
+      outline: none
+
+      .casesSlider__photo
+        flex-basis: 40%
+        position: relative
+        div
+          overflow: hidden
+          height: 100%
+          img
+            object-fit: cover
+            height: 100%
+        .casesSlider__number
+          color: $green
+          font-family: $ebold
+          font-size: 25px
+          background-color: #fff
+          border-radius: 100px
+          top: calc(50% - 50px)
+          right: -50px
+          position: absolute
+          width: 100px
+          height: 100px
+          box-shadow: 0 0 20px -5px rgba(0,0,0,0.2)
+          line-height: 104px
+          text-align: center
+          &:after
+            content: ''
+            height: 130px
+            width: 65px
+            display: block
+            position: absolute
+            top: -15px
+            right: -15px
+            border-top-right-radius: 65px
+            border-bottom-right-radius: 65px
+            border: 1px solid #b0dda8
+            border-left: none
+      .casesSlider__text
+        flex-basis: 60%
+        padding: 20px 90px
+        display: flex
+        flex-direction: column
+        justify-content: center
+        align-items: flex-start
+        background-color: #fff
+        p
+          font-size: 16px
+
+
+//секция с товарами
+#productsSection
+  background-image: url("../img/f4.jpg")
+  background-size: cover
+  padding: 80px 0
+  .productBlock
+    box-shadow: 0 0 20px -5px rgba(0,0,0,0.1)
+    background: #fff url('../img/corner.png') no-repeat right top
+    padding: 60px 40px 50px
+    .productBlock__title
+      margin: 0
+      font-size: 20px
+      font-family: $bold
+      padding-bottom: 20px
+    p
+      font-size: 16px
+
+    .productBlock__content
+      display: flex
+      justify-content: space-between
+      align-items: stretch
+
+      div
+        display: flex
+        flex-direction: column
+        justify-content: space-around
+
+      .productBlock__price
+        align-self: center
+        padding-top: 30px
+        padding-bottom: 15px
+        b
+          font-size: 20px
+
+      .productBlock__time
+        img
+          padding-right: 10px
+          vertical-align: sub
+
+      .productBlock__imgWrap
+        padding-top: 10px
+
+      .button
+        span
+          padding: 15px 60px
+
+
+//секция с формой
+#orderSection
+  background: url('../img/f6.jpg') no-repeat center
+  background-size: cover
+  padding: 100px 0
+  overflow: visible
+  .orderSection__pic
+    position: relative
+    height: 280px
+    .outImg
+      left: -370px
+      position: absolute
+      top: 70px
+
+
+//свяжитесь с нами
+#contactSection
+  background: url('../img/f7.jpg') no-repeat center
+  background-size: cover
+  padding: 110px 0 0
+
+  .infoLine
+    padding-top: 30px
+    font-size: 22px
+    img
+      padding-right: 20px
+      vertical-align: -3px
+
+  .linkBlock
+    p
+      font-size: 16px
+    a
+      margin-left: 25px
+
+  .contactSection__button
+    padding-top: 50px
+
+.shadowBox
+  padding: 18px
+  border-radius: 15px
+  background-color: #fff
+  box-shadow: 0 0 20px -5px rgba(0,0,0,0.1)
+
+.dashedWrap
+  background-color: #fff
+  padding: 30px 40px
+  border-radius: 10px
+  border: 2px dashed #dbefd3
+
+.form__wrap
+  text-align: center
+  width: 100%
+
+  .form__title
+    font-family: $bold
+    font-size: 25px
+    margin-bottom: 5px
+  .form__descr
+    color: #979696
+    margin: 0
+    padding-bottom: 15px
+  input
+    padding: 30px 0
+    width: 100%
+    margin-top: 20px
+    outline: none
+
+  input[type="text"]
+    box-shadow: 0px 0px 30px 0px rgba(0,0,0,0.1) inset
+    color: #c3c0c0
+    border: none
+    border-radius: 100px
+    padding-left: 70px
+    font-size: 18px
+  .inputWrap
+    position: relative
+    img
+      position: absolute
+      left: 27px
+      top: 52px
+    &:before
+      content: ''
+      display: inline-block
+      position: absolute
+      width: 2px
+      height: 25px
+      background-color: #ddd
+      top: 49px
+      left: 57px
+
+  input[type="submit"]
+    background-color: $green
+    border-radius: 100px
+    box-shadow: 0px 0px 35px 0px rgba(64, 163, 12, 0.34)
+    cursor: pointer
+    align-items: center
+    color: #fff
+    border: none
+    margin-top: 30px
+    font-size: 20px
+
+  .miniTip
+    padding-top: 30px
+
+
+footer
+  background-color: #fafbfb
+  padding: 45px 0
+  p
+    margin: 0
+  .copyright
+    color: #979696
+    font-size: 15px
+  .developed
+    color: #121214
+    b
+      font-weight: 900
+      color: #40a30c
+  .phone
+    font-weight: bold
+    font-size: 22px
+    text-decoration: none
+    color: #121212
+    img
+      padding-right: 20px
+      vertical-align: -7px
+
+
+.popupBox
+  position: fixed
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
+  z-index: 999
+  justify-content: center
+  align-items: center
+  transition: opacity .5s ease .1s
+  opacity: 0
+  display: none
+  .overlay
+    position: absolute
+    width: 100%
+    height: 100%
+    z-index: 0
+    background-color: rgba(0,0,0,0.7)
+  .popup
+    position: relative
+    display: none
+    form
+      width: 400px
+      margin: auto
+    &.active
+      display: block
+  &.active
+    opacity: 1
+    display: flex
+  .dashedWrap
+    &.hidden
+      display: none
+
+@media screen and (max-width: 1600px)
+  #effectSection
+    background-position-x: 110%
+
+@media screen and (max-width: 1360px)
+  #effectSection
+    background-size: 300px
+  .outImg
+    max-width: 100%
+    top: 0!important
+    left: 0!important
+    position: relative!important
+
+@media screen and (max-width: 1200px)
+  #effectSection
+    background-image: none
+
+
+@media screen and (max-width: 991px)
+
+  #startSection
+    padding-top: 150px !important
+    .startSection__img
+      display: none
+
+  #infographicsSection
+    padding-bottom: 80px
+    .outImg
+      display: none
+
+  #incomesPlanningSection,
+  #outcomesPlanningSection,
+  #effectSection,
+  #uniqueSection
+    .outImg
+      display: none
+
+  #needsSection
+    background-image: none
+    .tabletCenter
+      justify-content: center
+    .simpleCard
+      padding: 0 10px
+      text-align: center
+      align-items: center
+      br
+        display: none
+
+  .orderSection__pic
+    display: none
+  .button
+    span
+      font-size: 16px
+  #sliderSection
+    .casesSlider
+      .casesSlider__slide
+        flex-wrap: wrap
+        .casesSlider__photo
+          flex-basis: 100%
+          img
+            width: 100%
+            max-height: 420px
+            object-position: top
+          .casesSlider__number
+            bottom: -50px
+            right: calc(50% - 50px)
+            top: auto
+            &:after
+              height: 65px
+              width: 130px
+              bottom: -15px
+              right: -15px
+              border-radius: 0
+              border-bottom-left-radius: 65px
+              border-bottom-right-radius: 65px
+              border-top: none
+              border-left: 1px solid #b0dda8
+              top: auto
+        .casesSlider__text
+          padding: 80px 60px 20px
+          flex-basis: 100%
+
+  .mobileHide
+    display: none
+  .mobileShow
+    display: block
+
+  #aboutModelSection
+    .title
+      display: none
+      &+p
+        display: none
+    .row
+      flex-direction: column-reverse!important
+
+  .mobileTitle
+    flex-direction: column
+    .title
+      display: block!important
+      text-align: center
+      &+p
+        display: block!important
+        text-align: center
+
+  .button
+    margin: auto
+  .miniTip
+    text-align: center
+
+  #effectSection
+    background-size: 120px
+    background-position-y: 20px
+    .outImg
+      display: none
+    .markedList
+      &:after
+        content: ''
+        display: block
+        position: absolute
+        background-image: url("../img/calc_pic_mob.png")
+        width: 124px
+        height: 140px
+        top: 310px
+        right: -20px
+
+  #contactSection
+    padding-bottom: 50px
+    .button
+      span
+        padding-left: 60px
+        padding-right: 60px
+
+  #aboutModelSection,
+  #downloadSection,
+  #uniqueSection
+    .title
+      display: none
+      &+p
+        display: none
+    .row
+      flex-direction: column-reverse!important
+
+  #uniqueSection
+    background-size: 220px
+    .title
+      text-align: left
+    .outImgWrap
+      max-width: 100%
+      .outImg
+        padding-bottom: 20px
+
+  #downloadSection
+    .mobileTitle
+      .title
+        font-size: 32px
+        &+p
+          font-size: 20px
+
+  .mobileTitle
+    flex-direction: column
+    .title
+      display: block!important
+      text-align: center
+      &+p
+        display: block!important
+        text-align: center
+
+  footer
+    .row
+      justify-content: center!important
+      .changeOrder
+        order: -1
+      .phone
+        font-size: 24px
+        padding-left: 30px
+      .copyright
+        padding: 15px 30px
+
+@media screen and (max-width: 767px)
+
+  .section
+    padding: 50px 0!important
+
+  header
+    .header__phone
+      margin-right: 30px
+      font-size: 19px
+    .header__menu
+      .miniHeader
+        display: none !important
+        justify-content: center
+      .markedList
+        margin-top: auto
+        li
+          a
+            font-size: 20px
+      .linkBlock
+        margin-top: auto
+      .headerMenu__button
+        padding-top: 20px
+        span
+          padding: 25px 60px
+
+  .mobileHide
+    display: none
+  .mobileShow
+    display: block
+
+  #startSection
+    .button
+      span
+        font-size: 15px
+    .downButton
+      padding-top: 60px
+      padding-bottom: 40px
+    .startSection__img
+      display: none
+    .title
+      b
+        font-size: 34px !important
+
+  #incomesPlanningSection
+    .outImg
+      display: none
+
+  #outcomesPlanningSection
+    .outImg
+      display: none
+
+  #effectSection
+    background-size: 120px
+    background-position-y: 20px
+    .outImg
+      display: none
+    .markedList
+      &:after
+        content: ''
+        display: block
+        position: absolute
+        background-image: url("../img/calc_pic_mob.png")
+        width: 124px
+        height: 140px
+        top: 310px
+        right: -20px
+
+  #contactSection
+    .outImg
+      display: none
+    .container
+      .infoLine
+        padding-top: 10px
+        font-size: 20px
+      .linkBlock
+        padding-top: 20px
+
+  #infographicsSection
+    overflow: hidden
+    .outImg
+      display: none
+    .mobileShow
+      display: block
+      .row
+        padding: 0 !important
+        .col-6
+          padding: 10px
+          .infoBlock__col
+            width: 40px
+          p
+            font-size: 15px
+          .infoBlock__percentage
+            font-size: 21px
+          .infoBlock__colWrap_small
+            height: 30px
+        .infoReasonBlock
+          padding: 25px 80px 25px 10px
+          position: relative
+          max-width: 340px
+          &:after
+            content: ''
+            display: block
+            position: absolute
+            width: 225px
+            height: 327px
+            top: -110px
+            left: 200px
+            background-image: url(../img/reason_mob.png)
+
+  .button
+    margin: auto
+  .miniTip
+    text-align: center
+  #aboutModelSection,
+  #downloadSection,
+  #uniqueSection
+    .title
+      display: none
+      &+p
+        display: none
+    .row
+      flex-direction: column-reverse!important
+
+  #uniqueSection
+    background-size: 220px
+    .title
+      text-align: left
+    .outImgWrap
+      max-width: 100%
+      .outImg
+        padding-bottom: 20px
+
+  #downloadSection
+    .mobileTitle
+      .title
+        font-size: 32px
+        &+p
+          font-size: 20px
+
+  .mobileTitle
+    flex-direction: column
+    .title
+      display: block!important
+      text-align: center
+      &+p
+        display: block!important
+        text-align: center
+
+  .productBlock
+    margin-top: 20px
+    padding: 70px 20px 50px
+    overflow: hidden
+  #needsSection
+    background: #fff
+    .simpleCard
+      align-items: center
+      br
+        display: inline
+  #infographicsSection
+    .col-md-4,
+    .col-md-3
+      flex-basis: 50% !important
+      max-width: 50% !important
+  #calcSection
+    &:before
+      display: none
+    .col-md-4
+      padding: 15px 0!important
+    .shadowBlock
+      flex-direction: column !important
+    .calcSection__list
+      padding: 40px 20px 0 20px!important
+
+
+  footer
+    .row
+      justify-content: center!important
+      .changeOrder
+        order: -1
+      .phone
+        font-size: 20px
+        padding-left: 20px
+      .copyright
+        padding: 15px 0 5px 0
+      .footer__logo
+        img
+          max-width: 125px
+
+
+
+@media screen and (max-width: 575px)
+
+  #calcSection
+    .col-md-8
+      padding: 0!important
+    .col-md-4
+      padding: 15px !important
+
+  #incomesPlanningSection
+    .markedList
+      padding-right: 50px
+      position: relative
+      .markedList__title
+        width: 220px
+      &:after
+        content: ''
+        display: block
+        position: absolute
+        background-image: url("../img/planning_pic_mob.png")
+        width: 122px
+        height: 162px
+        right: -30px
+        top: -25px
+
+  #outcomesPlanningSection
+    .markedList
+      padding-right: 70px
+      &:after
+        content: ''
+        display: block
+        position: absolute
+        background-image: url("../img/planning_pic_2_mob.png")
+        width: 119px
+        height: 150px
+        right: -40px
+        bottom: -50px
+
+  #effectSection
+    .markedList
+      overflow: hidden
+      &:after
+        top: 35%
+
+  .markedList
+    .markedList__list
+      li
+        font-size: 14px
+
+
+  #contactSection
+    .container
+      background-image: url("../img/contact_us_pic_mob.png")
+      background-repeat: no-repeat
+      background-position: 110% 100px
+
+  header
+    .header__top
+      justify-content: space-between!important
+      .header__phone
+        display: none
+      .header__phone_mob
+        display: block
+  #orderSection
+    overflow: hidden
+    .form__wrap
+      margin-top: 80px
+      position: relative
+      z-index: 1
+      &:before
+        content: ''
+        display: block
+        position: absolute
+        z-index: -1
+        top: -150px
+        right: -70px
+        width: 233px
+        height: 234px
+        background-image: url("../img/mob_circle.png")
+      &:after
+        content: ''
+        display: block
+        position: absolute
+        z-index: 100
+        top: -90px
+        right: -70px
+        width: 227px
+        height: 115px
+        background-image: url("../img/ipad_mob.png")
+
+  #productsSection
+    .productBlock
+      p
+        font-size: 15px
+    .productBlock__content
+      .productBlock__price
+        align-self: flex-start
+      .productBlock__imgWrap
+        padding-left: 20px
+
+
+  .title
+    font-size: 29px
+
+  .container
+    .row
+      padding: 0 30px!important
+
+  #sliderSection
+    .casesSlider
+      .casesSlider__arrow
+        top: 150px
+      .casesSlider__slide
+        .casesSlider__photo
+          flex-basis: 100%
+          img
+            width: 100%
+            max-height: 280px
+            object-position: top
+          .casesSlider__number
+            bottom: -50px
+            right: calc(50% - 50px)
+            &:after
+              height: 65px
+              width: 130px
+              bottom: -15px
+              right: -15px
+              border-bottom-left-radius: 65px
+              border-bottom-right-radius: 65px
+              border-top: none
+        .casesSlider__text
+          font-size: 14px
+          padding: 80px 45px 15px
